@@ -1,0 +1,33 @@
+{{> header}}
+
+<h1>Dashboard</h1>
+<p>Welcome, {{username}}! </p>
+<p>Search a book below to get started with a review. </p>
+<div>
+  <input type="text" id="search" placeholder="Search for books...">
+  <button id="search-button">Search</button>
+</div>
+<div id="search-results" style="margin-top:20px;"></div>
+<div id="review-section" style="display:none; margin-top:30px;">
+  <h2>Add Your Review</h2>
+  <div id="selected-book"></div>
+  <div style="margin:15px 0;">
+    Rating: 
+    <span class="star" data-rating="1">☆</span>
+    <span class="star" data-rating="2">☆</span>
+    <span class="star" data-rating="3">☆</span>
+    <span class="star" data-rating="4">☆</span>
+    <span class="star" data-rating="5">☆</span>
+    <input type="hidden" id="rating" value="0">
+  </div>
+  <textarea id="comment" rows="4" style="width:100%;"></textarea>
+  <button id="submit-review">Submit Review</button>
+</div>
+<div id="all-reviews" style="margin-top:40px;">
+  <h2>All Reviews</h2>
+  <div id="reviews-list"></div>
+</div>
+
+<script>
+{{{script}}}
+</script>

@@ -1,0 +1,39 @@
+<h1>Admin Dashboard</h1>
+<h2>All Users</h2>
+<table border="1" style="width:100%; border-collapse:collapse;">
+  <tr>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Role</th>
+  </tr>
+  {{#each users}}
+    <tr>
+      <td>{{this.userid}}</td>
+      <td>{{this.password}}</td>
+      <td>{{this.role}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+<h2>All Reviews</h2>
+<div>
+  {{#if reviews.length}}
+    {{#each reviews}}
+      <div style="border:1px solid #ddd; padding:10px; margin-bottom:10px; border-radius:5px; display:flex; gap:15px; align-items:center;">
+        {{#if this.book_thumbnail}}
+          <img src="{{this.book_thumbnail}}" style="height:100px; width:auto; border:1px solid #eee;">
+        {{else}}
+          <div style="height:100px; width:80px; background:#f0f0f0; display:flex; align-items:center; justify-content:center;">No image</div>
+        {{/if}}
+        <div style="flex-grow:1;">
+          <strong>{{this.username}}</strong> reviewed <em>{{this.book_title}}</em><br>
+          <span style="color:gold;">{{this.stars}}</span>
+          <p>{{this.comment}}</p>
+          <small>Reviewed on: {{this.formattedDate}}</small>
+        </div>
+      </div>
+    {{/each}}
+  {{else}}
+    <p>No reviews yet.</p>
+  {{/if}}
+</div>

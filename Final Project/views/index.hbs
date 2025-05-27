@@ -1,0 +1,32 @@
+{{#if message}}
+  <div class="message">{{message}}</div>
+{{/if}}
+
+<div class="auth-container">
+  <h2>Register</h2>
+  <form action="/register" method="post">
+    <div class="form-group">
+      <label for="reg-username">Username:</label>
+      <input type="text" id="reg-username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="reg-password">Password:</label>
+      <input type="password" id="reg-password" name="password" required>
+    </div>
+
+    <!-- Pink Register Button -->
+    <button type="submit" style="
+      background-color: #ff99cc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    ">
+      Register
+    </button>
+  </form>
+
+  <a href="/protected" class="login-link">Already have an account? Login</a>
+</div>
